@@ -1,6 +1,7 @@
 import { CartContext } from "@/context/cartcontext";
 import { ShoeContext } from "@/context/shoecontext"
 import { useContext } from "react"
+import Swal from "sweetalert2";
 
 export function DetailsShoePage() {
 
@@ -8,27 +9,37 @@ export function DetailsShoePage() {
 
     const { addShoe } = useContext(CartContext);
 
+    function addingtoCart() {
+        addShoe(selectedShoe!)
+        Swal.fire({
+            title: "Agregado al carrito",
+            icon: "success",
+        })
+    }
+
     return (
-        <div className="flex flex-col gap-10 px-5 sm:px-[20vw]">
+        <div className="flex flex-col gap-10 pb-5 px-5 sm:px-[20vw]">
             <div className="w-full flex not-sm:flex-col gap-4">
-                <img className="sm:w-1/2" src={selectedShoe?.img} alt="shoe" />
+                <img className="sm:w-1/2 h-60 object-cover rounded-2xl" src={selectedShoe?.img} alt="shoe" />
                 <div className="sm:w-1/2 flex flex-col gap-3">
-                    <div className="flex flex-col gap-1">
-                        <span>
-                            {selectedShoe?.title}
-                        </span>
-                        <span>
-                            {selectedShoe?.description}
-                        </span>
-                        <span>
-                            {selectedShoe?.price}
-                        </span>
+                    <div className="flex flex-col h-full justify-between">
+                        <div className="flex flex-col gap-1">
+                            <span className="font-semibold text-xl">
+                                {selectedShoe?.title}
+                            </span>
+                            <span className="text-gray-500">
+                                {selectedShoe?.description}
+                            </span>
+                            <span className="font-semibold">
+                                ${selectedShoe?.price}
+                            </span>
+                        </div>
+                        <div>
+                            <p className="font-semibold text-sm">Quantity</p>
+                            <span>coso</span>
+                        </div>
                     </div>
-                    <div>
-                        <p>Quantity</p>
-                        <span>coso</span>
-                    </div>
-                    <button onClick={() => { addShoe(selectedShoe!) }} className="w-full text-center bg-black text-white font-semibold rounded-xl py-3">Add to Cart</button>
+                    <button onClick={addingtoCart} className="w-full text-center bg-black text-white font-semibold rounded-xl py-3">Add to Cart</button>
                 </div>
             </div>
             <div className="w-full flex not-sm:flex-col gap-4">
