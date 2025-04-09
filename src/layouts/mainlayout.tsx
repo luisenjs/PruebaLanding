@@ -19,7 +19,7 @@ export function MainLayout() {
                 </div>
                 <button onClick={() => { navigate("/cart") }} className="flex gap-3 border rounded-lg h-8 w-44 items-center justify-center"><ShoppingBag />View Cart{cart.length != 0 ? <span className="bg-orange-400 rounded-full h-6 w-6">{cart.length}</span> : <></>}</button>
             </header>
-            <main className="pt-20 h-full">
+            <main className="pt-20 h-full w-screen">
                 <ShoeProvider>
                     <Outlet />
                 </ShoeProvider>

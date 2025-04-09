@@ -20,15 +20,18 @@ export function Cart() {
     }
 
     return (
-        <div className="flex not-sm:flex-col-reverse gap-10 sm:gap-5 sm:py-10 px-5 sm:px-[10vw]">
+        <div className="flex not-sm:flex-col-reverse gap-10 sm:gap-20 sm:py-10 px-5 sm:px-[10vw]">
             <div className="flex flex-col sm:w-2/3 gap-5">
-                {
-                    cart.map(item => (
-                        <BagItemCard img={item.img} name={item.title} description={item.description} price={item.price} />
-                    ))
-                }
+                <h2 className="text-3xl font-semibold">Your Bag</h2>
+                <div className="flex flex-col gap-5">
+                    {
+                        cart.map(item => (
+                            <BagItemCard img={item.img.main} name={item.title} description={item.description} price={item.price} />
+                        ))
+                    }
+                </div>
             </div>
-            <div className="flex flex-col gap-5 sm:w-1/3">
+            <div className="flex flex-col gap-5 w-full sm:w-1/3">
                 <h3 className="text-3xl font-semibold">Summary</h3>
                 <div className="w-full flex flex-col gap-3">
                     <span className="flex justify-between text-xl">Subtotal:<span>${getTotal()}</span></span>
