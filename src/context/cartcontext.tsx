@@ -5,12 +5,14 @@ import { createContext } from "react";
 type CartContextType = {
     cart: Shoe[];
     addShoe: (shoe: Shoe) => void;
+    removeShoe: (shoe: Shoe) => void;
     getTotal: () => number;
 }
 
 export const CartContext = createContext<CartContextType>({
     cart: [],
     addShoe: () => { },
+    removeShoe: () => { },
     getTotal: () => 0,
 })
 
@@ -22,6 +24,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         cart.push(shoe);
     }
 
+    function removeShoe(shoe: Shoe) {
+        const index = cart.findIndex(item => item.id === shoe.id);
+        if (index !== -1) {
+            cart.splice(index, 1);
+        }
+
+    }
+
     function getTotal() {
         let total = 0;
         cart.forEach(shoe => {
@@ -31,7 +41,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     }
 
     return (
-        <CartContext.Provider value={{ cart, addShoe, getTotal }}>
+        <CartContext.Provider value={{ cart, addShoe, getTotal, removeShoe }}>
             {children}
         </CartContext.Provider>
     )

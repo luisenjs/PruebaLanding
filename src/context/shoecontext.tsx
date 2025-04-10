@@ -35,8 +35,8 @@ export function ShoeProvider({ children }: { children: React.ReactNode }) {
                 main: "/src/assets/shoe2.png",
                 desc: "/src/assets/descpshoe2.png",
                 car1: "/src/assets/shoe2.1.png",
-                car2: "/src/assets/shoe1.2.png",
-                car3: "/src/assets/shoe1.3.png"
+                car2: "/src/assets/shoe2.2.png",
+                car3: "/src/assets/shoe2.3.png"
             },
             title: "Nike",
             description: "Nike Gamma Force",

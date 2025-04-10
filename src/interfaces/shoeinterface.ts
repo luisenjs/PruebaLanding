@@ -1,4 +1,5 @@
 export interface Shoe {
+    id: number;
     img: {
         main: string;
         desc: string;
