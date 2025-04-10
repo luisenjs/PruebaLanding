@@ -26,7 +26,7 @@ export function BagItemCard({ shoe }: bagitemcardprops) {
 
     return (
         <div className="w-full h-44 flex gap-5 justify-start rounded-3xl">
-            <img className="w-44" src={shoe.img.main} alt={shoe.title} />
+            <img className="aspect-square" src={shoe.img.main} alt={shoe.title} />
             <div className="w-full gap-4 flex flex-col justify-between">
                 <div className=" w-full flex gap-4 justify-between">
                     <div className="flex flex-col gap-1 px-5">
