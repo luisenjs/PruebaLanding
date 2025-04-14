@@ -1,54 +1,19 @@
-# React + TypeScript + Vite
+# Landing Page para una zapatería
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
 
-Currently, two official plugins are available:
+Este proyecto trata de una landing page de zapatos, en los cuales se puede consultar las descripciones de cada zapatos y agregar los productos al carrito para su posterior compra.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Flujo para comprar un zapato
 
-## Expanding the ESLint configuration
+1. En la página de inicio, dar clic en un zapato que se muestra.
+2. En la nueva página del zapato, dar clic en agregar al carrito (*Puede agregar más de un zapato*)
+3. En la NavBar, dar clic en ver carro.
+4. Confirmar la suma de los precios y dar clic en finalizar.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Pasos para ejecutar
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. Clonar el repositorio.
+2. Ejecutar ```npm i```.
+4. Levantar el proyecto con ```npm run dev```
+5. Visitar el proyecto [aquí](http://localhost:5173/)
