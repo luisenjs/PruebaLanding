@@ -18,7 +18,9 @@ export function MainLayout() {
                     <img src="/src/assets/Vector.svg" alt="logo" />
                     <span className="font-semibold">SUN CO.</span>
                 </div>
-                <Button variant="outline" onClick={() => { navigate("/cart") }} className="w-44"><ShoppingBag />View Cart{cart.length != 0 ? <span className="bg-orange-400 rounded-full h-6 w-6">{cart.length}</span> : <></>}</Button>
+                <Button variant="outline" onClick={() => { navigate("/cart") }} className="w-44 relative"><ShoppingBag />View Cart{cart.length != 0
+                    ? <><span className="bg-orange-400 rounded-full h-6 w-6 absolute -right-2 -top-2">{cart.length}</span><span className="bg-orange-500 rounded-full h-7 w-7 animate-ping absolute -right-2 -top-2"></span></>
+                    : <></>}</Button>
             </header>
             <main className="pt-20 h-full w-screen">
                 <ShoeProvider>
